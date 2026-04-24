@@ -1,0 +1,14 @@
+name: Run News Pipeline
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+jobs:
+  run-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Supabase Function
+        run: |
+          curl -L -X POST 'https://dmzrkfvpoubcnkefyaqd.supabase.co/functions/v1/news_pipeline' 
