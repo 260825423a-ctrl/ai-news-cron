@@ -11,4 +11,8 @@ jobs:
     steps:
       - name: Call Supabase Function
         run: |
-          curl -L -X POST 'https://dmzrkfvpoubcnkefyaqd.supabase.co/functions/v1/news_pipeline' 
+          curl -L -X POST 'https://dmzrkfvpoubcnkefyaqd.supabase.co/functions/v1/news_pipeline' \
+  -H 'Authorization: Bearer sb_publishable_zwfhqR1-Gn7Qn1nzDMHD8A_UGoB04wN' \
+  -H 'apikey: sb_publishable_zwfhqR1-Gn7Qn1nzDMHD8A_UGoB04wN' \
+  -H 'Content-Type: application/json' \
+  --data '{"name":"Functions"}'
